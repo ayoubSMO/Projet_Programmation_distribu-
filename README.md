@@ -56,80 +56,84 @@ La creation de Spring Cloud Gateway
 
 
 
-<h5>Sécurité des systèmes distribués avec Keycloak</h5>
+<h1>Sécurité des systèmes distribués avec Keycloak</h1>
 
-·       Part 1 : https://www.youtube.com/watch?v=w3W1bQdVJco
+<h5>Mettre en place le serveur d’authentification OAuth2 Keycloak version 12.0.1</h5>
+la mise en place de la dernier version de Keycloak 18.0.0
 
-·       Part 2 : https://www.youtube.com/watch?v=tfERGzx-Jqs
+![image](https://user-images.githubusercontent.com/84507906/175132001-28e8f203-6590-4800-b48b-c162fb69b929.png)
 
-Event Driven Architecture avec KAFKA
+Le lancement de Kaycloak avec standalone.bat
 
-·       Part 1 : https://www.youtube.com/watch?v=dXJEzisrFZo
+![image](https://user-images.githubusercontent.com/84507906/175132102-e6026181-a209-4f73-a4c1-181d8d072644.png)
 
-·       Part 2 : https://www.youtube.com/watch?v=eo8pSWpj2os
+<h5> Créer un Realm</h5>
 
-Travail à faire
+La creation du Realm "BillingRealm"
 
-1.       Mettre en place les micro-services
+![Realm](https://user-images.githubusercontent.com/84507906/175132211-bbbace66-2906-4818-be51-ef3912782a15.PNG)
 
-a.       Customer-Service
+<h5>Le client à sécuriser en mode public client</h5>
 
-b.       Inventory-Service
+La creation d'un client msProjet
 
-c.       Billing-Service
+![ClientPage_msProjet](https://user-images.githubusercontent.com/84507906/175132407-7411aef5-30a3-4948-8521-a8e836190091.PNG)
 
-d.       Eureka Discovery Service
+<h5>Créer les rôles (USER, ADMIN, PRODUCT_MANAGER, CUSTOMER_MANAGER et BILLING_MANAGER)</h5>
 
-e.       Spring Cloud Gateway
+![RolesListe](https://user-images.githubusercontent.com/84507906/175132506-41a2cae5-c630-4088-8359-cda2e87457bd.PNG)
 
-2.       Mise en place du service de Sécurité avec Keycloak
+<h5> Créer quelques utilisateurs</h5>
 
-o   Mettre en place le serveur d’authentification OAuth2 Keycloak version 12.0.1
+![UsersListe](https://user-images.githubusercontent.com/84507906/175132631-f8417781-4b16-49c9-bf4f-3cf06c3b324d.PNG)
 
-o   Créer un Realm,
+<h5>Affecter les rôles aux utilisateurs</h5>
 
-o   Le client à sécuriser en mode public client
+Affectation des roles au user ayoub
 
-o   Créer les rôles (USER, ADMIN, PRODUCT_MANAGER, CUSTOMER_MANAGER et BILLING_MANAGER)
+![UsersRols](https://user-images.githubusercontent.com/84507906/175132698-e96e40f9-0822-4f25-8fbe-845962927944.PNG)
 
-o   Créer quelques utilisateurs
+<h5>Authentification avec le mot de passe</h5>
 
-o   Affecter les rôles aux utilisateurs
+![LoginPage](https://user-images.githubusercontent.com/84507906/175132956-e684f067-cfad-4058-bc3e-cd8d91891c62.PNG)
 
-o   Tester l’authentification des utilisateurs en utilisant un client Rest comme ARC
+<h1>Sécurité l’ensemble des micro-services fonctionnels en mode Bearer-Only en utilisant Spring Security et des adaptateurs Keycloak. On suppose que les micro-services ne sont accessigble que pour les utilisateurs authentifiésavec leurs rôles respectifs : PRODUCT_MANAGER, CUSTOMER_MANAGER et BILLING_MANAGER.</h1>
 
-§  Authentification avec le mot de passe
+La commande keycloak.bearer-only= true pour securisé les microSerices 
 
-§  Authentification avec le Refresh Token
+<h1>Front end</h1>
+  La partie front end avec Spring MVC
+  
+  La page index
+  
+  ![indexPage](https://user-images.githubusercontent.com/84507906/175133458-29b4d760-10fa-4c8e-bd3d-bb5b596292d0.PNG)
+  
+  La page de login avec Keycloak
+  
+  ![LoginPage](https://user-images.githubusercontent.com/84507906/175133501-4623f966-8d8e-4b8b-827f-286441be34a5.PNG)
+   
+  La page des clients
+  
+  ![LaListeDesClients](https://user-images.githubusercontent.com/84507906/175133563-0d8324bf-1151-4f96-b0c1-2fb2f2aac265.PNG)
+  
+  La liste des produits
+  
+  ![ListeDesProduits](https://user-images.githubusercontent.com/84507906/175133625-84283eec-545f-4a8e-b864-ad757b2a8ad3.PNG)
+  
+  
 
-o   Personnaliser le paramétrage des timeout des tokens
+<h1>Mise en place d’une solution de messagerie asynchrone avec le Broker KAFKA</h1>
 
-3.       Sécurité l’ensemble des micro-services fonctionnels en mode Bearer-Only en utilisant Spring Security et des adaptateurs Keycloak. On suppose que les micro-services ne sont accessigble que pour les utilisateurs authentifiésavec leurs rôles respectifs : PRODUCT_MANAGER, CUSTOMER_MANAGER et BILLING_MANAGER.
+Les données generer par le pooler sont stocker dans un fichier .csv
 
-4.       Développer une application Web Front End qui permet de gérer les produits, les clients et les factures en utilisant le Framework de votre choix : Angulrar, React ou Spring MVC avec Thymeleaf.
+![FacturationCSV](https://user-images.githubusercontent.com/84507906/175133846-dc291208-0242-46b3-ab32-528f12b5b4b6.PNG)
 
-5.       Sécuriser l’application FrontEnd en mode public client en mettant en place l’adaptateur Keycloak qui instaure un système d’authentification via Keycloak.
+et aussi dans la base de données
 
-6.       Personnaliser la sécurité de la partie frontend en ajoutant les autres fonctionnalités fournies par Keycloak
+![DonnéesStockerBDD](https://user-images.githubusercontent.com/84507906/175133949-41a359b8-3430-4e02-9027-23598d53719a.PNG)
 
-·       Auto-inscription des utilisateurs
+![DataReturnStoreCSV_BDD](https://user-images.githubusercontent.com/84507906/175133996-59646e54-9273-4bb3-b8bf-e0c516e7322d.PNG)
 
-·       Politique des mots de passe
+La table facturation
 
-·       Double authentification OTP
-
-·       Etc…
-
-7.       Mise en place d’une solution de messagerie asynchrone avec le Broker KAFKA
-
-a.       Mettre en place le Broker KAFKA
-
-b.       Créer un micro-service Spring Boot qui permet de simuler un Producer KAFKA qui permet d’envoyer à un tompic « FACTURATION » à chaque seconde un message contenant le numéro de la facture, le nom du client et le montant de la facture.
-
-c.       Créer un Micro-service Spring Boot qui permet de consommer les messages du Topic « FACTURATION » et de les enregistrer  dans sa propre base de données et dans un fichier CSV, avec Une API REST qui permet de consulter les factures.
-
-d.       Créer un Micro-service de Real Time Data Analytics en mode Stream Processing utilisant KAFKA Streams qui permet de traiter en temps réel les messages du Topic « FACTURATION » en produisant  des statistiques comme  Le Total des factures reçus pour les 5 dernières secondes et le total des factures de chaque client.
-
-8.       Proposer une solution d’intégration de du BROKER KAFKA dans votre application
-
-9.       Mettre en place un micro-service de batch processing avec Spring Batch permettant de traiter les données du fichier CSV de facturation produit par l’application
+![TableFacturation](https://user-images.githubusercontent.com/84507906/175134029-0fb3914b-6a6d-44fd-8fb1-73fcfedfe592.PNG)
