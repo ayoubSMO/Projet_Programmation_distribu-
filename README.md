@@ -1,32 +1,36 @@
 # Projet_Programmation_distribu-
 This repository is for showing how this project works.
 
-# Youssfi-Project
-this repository is for collabing.
-
 L’objectif est de créer un système distribué basé sur les micro-services permettant de gérer les factures des clients en utilisant la même architecture que vous avez déjà développé auparavant en y intégrant un système de sécurité basé sur Keycloak, Un Bus de messagerie avec KAFKA, un service de Stream processing avec Kafka Streams et un service de Batch Processing avec Spring Batch.
 
 ![image (1)](https://user-images.githubusercontent.com/84507906/172048467-bdd777a0-0aa4-4a00-b352-ce87e87a274e.png)
 
 
 
-A la fin, nous projetons appliquer pour cette application les patterns CQRS et Event Sourcing.
+J'ai réalisé les taches suivantes dans le projet de la programmation distribuée
 
-Ressources à utiliser :
+Les taches réaliser et explication
 
 Architecture Micro-services :
 
-·       Part 1 : https://www.youtube.com/watch?v=u8awF6FCR8Q
+<h3>Customer-Service</h3>
+La creation du micro service qui gere les clients et qui s'applique dans le port 8087
 
-·       Part 2 : https://www.youtube.com/watch?v=d5qoT6cW1i0
+![image](https://user-images.githubusercontent.com/84507906/175099030-dfa24d84-9a3b-4b38-a6cc-255fe6626cdf.png)
 
-·       Part 3 : https://www.youtube.com/watch?v=Ufdd45-H6uA
+fetch data pour le micro-service des clients ou il communique avec la base de données des cient et return les valeurs
 
-·       Part 4 : https://www.youtube.com/watch?v=IhNxrE5tlXs
+![FetchDataConsumerService](https://user-images.githubusercontent.com/84507906/175098685-d5146eb5-be33-4e4e-b41d-3eae6b4907c9.PNG)
 
-·       Part 5 : https://www.youtube.com/watch?v=2p8wdKHx5jo
+<h3>Inventory-Service</h3>
 
-·       Part 6 : https://www.youtube.com/watch?v=jGvkVGCUf-w
+La creation du micro service qui gere les produits et qui s'applique dans le port 8082
+
+![image](https://user-images.githubusercontent.com/84507906/175126391-ae94c3ea-8d09-4eb7-aea6-cc86688fe2de.png)
+
+fetch data pour le micro-service des produits ou il communique avec la base de données des produits et return les valeurs
+
+![FetchDataProdectService](https://user-images.githubusercontent.com/84507906/175098691-178596bb-43e1-4b39-afbc-6a5aeb3b6097.PNG)
 
 Sécurité des systèmes distribués avec Keycloak
 
