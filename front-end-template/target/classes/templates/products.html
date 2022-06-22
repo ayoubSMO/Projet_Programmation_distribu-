@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <title>Produits</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/assets/css/main.css}" />
+    <noscript><link rel="stylesheet" th:href="@{/css/assets/css/main.css}" /></noscript>
+</head>
+<body>
+<div id="wrapper">
+    <header id="header" class="alt">
+        <a th:href="@{/}" class="logo"><strong>Master</strong> <span>Iaad</span></a>
+        <nav>
+            <a th:href="@{/}">Menu</a>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a th:href="@{/}">Accueil</a></li>
+            <li><a th:href="@{/customers}">Clients</a></li>
+            <li><a th:href="@{/products}">Produits</a></li>
+            <li><a th:href="@{/factures}">Factures</a></li>
+        </ul>
+        <ul class="actions stacked">
+            <li><a th:href="@{/logout}" class="button fit">Déconnexion</a></li>
+        </ul>
+    </nav>
+    <div id="main">
+    <h3>Liste des produits</h3>
+
+    <h5></h5>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Designation</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Action</th>
+        </tr >
+        </thead>
+        <tbody>
+        <tr th:each="p:${products}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.designation}"></td>
+            <td th:text="${p.prix}"></td>
+            <td th:text="${p.quantite}"></td>
+            <td>
+                <a th:href="@{'/products/'+${p.id}}" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+	<head>
+		<title>Projet youssfi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" th:href="@{/css/assets/css/main.css}" />
+		<noscript><link rel="stylesheet" th:href="@{/css/assets/css/main.css}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a th:href="@{/}" class="logo"><strong>Master</strong> <span>Iaad</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a th:href="@{/}">Accueil</a></li>
+						<li><a th:href="@{/customers}">Clients</a></li>
+						<li><a th:href="@{/products}">Produits</a></li>
+						<li><a th:href="@{/factures}">Factures</a></li>
+					</ul>
+					<ul class="actions stacked">
+						<li><a th:href="@{/logout}" class="button fit">Déconnexion</a></li>
+					</ul>
+				</nav>
+
+				<!-- Banner -->
+					<section id="banner" class="major">
+						<div class="inner">
+							<header class="major">
+								<h1>Hi, my name is Boureqba Ayoub</h1>
+							</header>
+							<div class="content">
+								<p>This project is an application of all the courses that we learned in our module ditributed programming.</p>
+								<ul class="actions">
+									<li><a th:href="@{/customers}" class="button next scrolly">Get Started</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script th:src="@{/css/assets/js/jquery.min.js}"></script>
+			<script th:src="@{/css/assets/js/jquery.scrolly.min.js}"></script>
+			<script th:src="@{/css/assets/js/jquery.scrollex.min.js}"></script>
+			<script th:src="@{/css/assets/js/browser.min.js}"></script>
+			<script th:src="@{/css/assets/js/breakpoints.min.js}"></script>
+			<script th:src="@{/css/assets/js/util.js}"></script>
+			<script th:src="@{/css/assets/js/main.js}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,28 @@
+.container{
+    margin: 0 auto;
+    background-color: #fff;
+    padding-top: 20px;
+    border-bottom: 1px solid #aaa;
+}
+
+.navbar-brand{
+    font-size: 20px;
+    font-weight: bold;
+    color: #007FA4;
+}
+
+.nav-link{
+    color: #aaa;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    font-weight: 700;
+}
+
+.nav-link.active{
+    color: #F7941E;
+}
+
+.nav-link:hover{
+    color: #007FA4;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/assets/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <script src="/webjars/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <a href="index.html" class="logo"><strong>Forty</strong> <span>by UP</span></a>
+        <nav>
+            <a href="#menu">Menu</a>
+        </nav>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a th:href="@{/}">Accueil</a></li>
+            <li><a th:href="@{/customers}">Clients</a></li>
+            <li><a th:href="@{/products}">Produits</a></li>
+            <li><a th:href="@{/factures}">Factures</a></li>
+        </ul>
+        <ul class="actions stacked">
+            <li><a href="#" class="button primary fit">Get</a></li>
+            <li><a href="#" class="button fit">Log In</a></li>
+        </ul>
+    </nav>
+    <ul class="navbar-nav ml-auto">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                <span sec:authentication="name"></span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" th:href="@{/logout}">Déconnexion</a>
+                <a class="dropdown-item" href="#">Modifier mot de passe</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+<main class="main">
+    <span class="titre1">Bienvenu(e) Monsieur / Madame</span>
+    <span class="titre2">chez notre Application</span>
+</main>
+</body>
+</html>

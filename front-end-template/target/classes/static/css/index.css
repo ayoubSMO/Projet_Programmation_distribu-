@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.main{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+
+.titre1, .titre2{
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.titre1{
+    color: #007FA4;
+}
+
+.titre2{
+    color: #F7941E;
+    margin-top: 8px;
+}
+
