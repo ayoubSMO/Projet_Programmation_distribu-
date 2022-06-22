@@ -32,6 +32,30 @@ fetch data pour le micro-service des produits ou il communique avec la base de d
 
 ![FetchDataProdectService](https://user-images.githubusercontent.com/84507906/175098691-178596bb-43e1-4b39-afbc-6a5aeb3b6097.PNG)
 
+<h3>Billing-Service</h3>
+
+La creation du micro service qui gere les produits et qui s'applique dans le port 8083
+
+![image](https://user-images.githubusercontent.com/84507906/175127454-1a05cb46-2092-482a-a1c5-f096433d7a71.png)
+
+<h3>Eureka Discovery Service</h3>
+
+Eureka Server est une application qui contient les informations sur toutes les applications de service client. Chaque service Micro s’enregistre sur le serveur Eureka et le serveur Eureka connaît toutes les applications clientes en cours d’exécution sur chaque port et adresse IP. Eureka Server est également connu sous le nom de Discovery Server.
+
+La creation de Eureka Discovery Service
+
+![image](https://user-images.githubusercontent.com/84507906/175129996-c1cd3676-501b-4d86-a286-76b4613b0ddb.png)
+
+<h3>Spring Cloud Gateway</h3>
+
+Spring Cloud Gateway est destiné à se situer entre un demandeur et une ressource demandée, où il intercepte, analyse et modifie chaque demande
+
+La creation de Spring Cloud Gateway
+
+![image](https://user-images.githubusercontent.com/84507906/175131186-45ba114a-e6d8-47d0-b2c5-3a815a78096d.png)
+
+
+
 Sécurité des systèmes distribués avec Keycloak
 
 ·       Part 1 : https://www.youtube.com/watch?v=w3W1bQdVJco
